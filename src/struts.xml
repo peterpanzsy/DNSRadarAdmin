@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC 
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" 
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.multipart.saveDir" value="/upload"></constant>
+	
+	<package name="user" extends="struts-default">
+		<!-- UserManage Begin -->
+		<action name="login" method="login" class="cn.edu.xjtu.manage.action.LoginAction">
+			<result name="succ" type="redirect">/pages/admin.jsp</result>
+			<result name="fail" type="redirect">/pages/login.jsp</result>
+		</action>
+	
+		<!-- UserManage End -->
+	</package>
+	
+	<!--指定action的扩展名 -->
+	<package name="default" extends="struts-default">
+
+	</package>
+	<package name="json" extends="json-default">
+		<action name="restartWindows" method="restartWindows" class="cn.edu.xjtu.manage.action.ControlAction">
+			<result name="SUCCESS" type="json"></result>
+		</action>
+		
+		<action name="getDNSScanConf" class="cn.edu.xjtu.manage.action.DNSScanConfAction"
+			method="getDNSScanConf">
+			<result name="SUCCESS" type="json">
+			</result>
+		</action>
+		
+		<action name="updateDNSScanConf" class="cn.edu.xjtu.manage.action.DNSScanConfAction"
+			method="updateDNSScanConf">
+			<result name="SUCCESS" type="json">
+			</result>
+		</action>
+		
+		<action name="getAppConf" class="cn.edu.xjtu.manage.action.AppConfAction"
+			method="getAppConf">
+			<result name="SUCCESS" type="json">
+			</result>
+		</action>
+		
+		<action name="updateAppConf" class="cn.edu.xjtu.manage.action.AppConfAction"
+			method="updateAppConf">
+			<result name="SUCCESS" type="json">
+			</result>
+		</action>
+		
+		<action name="reloadAllConfig" method="restart" class="cn.edu.xjtu.manage.action.ControlAction">
+			<result name="SUCCESS" type="json"></result>
+		</action>
+		
+		<action name="updateLicense" method="update" class="cn.edu.xjtu.manage.action.LicenseAction">
+			<result name="SUCCESS" type="json"></result>
+		</action>
+		<action name="getLicense" class="cn.edu.xjtu.manage.action.LicenseAction"
+			method="getLicenseInfo">
+			<result name="SUCCESS" type="json">
+			</result>
+		</action>
+		
+		<action name="listWhiteIp" method="list" class="cn.edu.xjtu.manage.action.WhiteIpAction">
+			<result name="SUCCESS" type="json"></result>
+		</action>
+		
+		<action name="addWhiteIp" method="add" class="cn.edu.xjtu.manage.action.WhiteIpAction">
+			<result name="SUCCESS" type="json"></result>
+		</action>
+		
+		<action name="delWhiteIp" class="cn.edu.xjtu.manage.action.WhiteIpAction"
+			method="delete">
+			<result name="SUCCESS" type="json">
+			</result>
+		</action>
+		
+		<action name="listWhiteDomain" method="list" class="cn.edu.xjtu.manage.action.WhiteDomainAction">
+			<result name="SUCCESS" type="json"></result>
+		</action>
+		
+		<action name="addWhiteDomain" method="add" class="cn.edu.xjtu.manage.action.WhiteDomainAction">
+			<result name="SUCCESS" type="json"></result>
+		</action>
+		
+		<action name="delWhiteDomain" class="cn.edu.xjtu.manage.action.WhiteDomainAction"
+			method="delete">
+			<result name="SUCCESS" type="json">
+			</result>
+		</action>
+		
+		<action name="listHoneyPot" method="list" class="cn.edu.xjtu.manage.action.HoneyPotAction">
+			<result name="SUCCESS" type="json"></result>
+		</action>
+		
+		<action name="addHoneyPot" method="add" class="cn.edu.xjtu.manage.action.HoneyPotAction">
+			<result name="SUCCESS" type="json"></result>
+		</action>
+		
+		<action name="delHoneyPot" class="cn.edu.xjtu.manage.action.HoneyPotAction"
+			method="delete">
+			<result name="SUCCESS" type="json">
+			</result>
+		</action>
+		
+		<action name="updateNetConf" class="cn.edu.xjtu.manage.action.DBAction"
+			method="updateNetConf">
+			<result name="SUCCESS" type="json">
+			</result>
+		</action>
+		
+		<action name="getNetConf" class="cn.edu.xjtu.manage.action.DBAction"
+			method="getNetConf">
+			<result name="SUCCESS" type="json">
+			</result>
+		</action>
+		
+		<action name="updateDB" class="cn.edu.xjtu.manage.action.DBAction"
+			method="update">
+			<result name="SUCCESS" type="json">
+			</result>
+		</action>
+		
+		<action name="getDB" class="cn.edu.xjtu.manage.action.DBAction"
+			method="getDB">
+			<result name="SUCCESS" type="json">
+			</result>
+		</action>
+		
+		<action name="updateFTP" class="cn.edu.xjtu.manage.action.DBAction"
+			method="updateFTP">
+			<result name="SUCCESS" type="json">
+			</result>
+		</action>
+		
+		<action name="getFTP" class="cn.edu.xjtu.manage.action.DBAction"
+			method="getFTP">
+			<result name="SUCCESS" type="json">
+			</result>
+		</action>
+		
+		<action name="updateClusterParameter" class="cn.edu.xjtu.manage.action.ClusterAction"
+			method="update">
+			<result name="SUCCESS" type="json">
+			</result>
+		</action>
+		
+		<action name="getClusterParameter" class="cn.edu.xjtu.manage.action.ClusterAction"
+			method="getCluster">
+			<result name="SUCCESS" type="json">
+			</result>
+		</action>
+		
+		<action name="logout" method="logout" class="cn.edu.xjtu.manage.action.LoginAction">
+			<result type="json">				
+			</result>
+		</action>
+		<action name="register" method="execute" class="cn.edu.xjtu.manage.action.RegisterAction">
+			<result type="json">				
+			</result>
+		</action>
+		
+		<action name="listUser" class="cn.edu.xjtu.manage.action.UserAction" method="list">
+			<result name="SUCCESS" type="json">				
+			</result>
+		</action>
+		
+		<action name="updateUser" class="cn.edu.xjtu.manage.action.UserAction" method="update">
+			<result name="SUCCESS" type="json">				
+			</result>
+		</action>
+		<action name="deleteUser" class="cn.edu.xjtu.manage.action.UserAction" method="delete">
+			<result name="SUCCESS" type="json">				
+			</result>
+		</action>
+		<!-- 工程end -->
+
+	</package>
+</struts>

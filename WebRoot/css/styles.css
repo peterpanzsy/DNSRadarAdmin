@@ -1,0 +1,29 @@
+@CHARSET "UTF-8";
+
+.backTop{ display:none; position:fixed; left:50%; bottom:100px; margin-left:510px; cursor:pointer; width:35px; height:35px; background:#6699CC; _position:absolute; _top:expression((document.compatMode && document.compatMode=='CSS1Compat' ? documentElement.scrollTop+(documentElement.clientHeight - this.clientHeight):document.body.scrollTop+(document.body.clientHeight - this.clientHeight))-100); text-align:center; color:#fff; line-height:32px;}
+
+.backTop:hover{ background:#99CCFF;}
+
+label.error {  
+      color: red;/*错误信息的颜色*/  
+  } 
+  
+myactive{
+	color:white;
+}
+.navbar-nav > li > a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 20px;
+  color:#000000;font-size:15px;font-family:Microsoft YaHei
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #000000;
+}
+
+
+
+*{
+	font-family:Microsoft YaHei
+}
