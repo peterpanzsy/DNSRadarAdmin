@@ -64,7 +64,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	    <script src="Flat-UI-master/js/jquery.placeholder.js"></script>
 	    <script type="text/javascript" src="js/admin.js"></script>
 	    <script type="text/javascript" src="js/serviceControl.js"></script>
-	    <script type="text/javascript" src="js/appConf.js"></script>
+<!-- 	    <script type="text/javascript" src="js/appConf.js"></script> -->
+	    <script type="text/javascript" src="js/dnsProbeConf.js"></script>
 	    <script type="text/javascript" src="js/dnsScanConf.js"></script>
 	    
   		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -139,7 +140,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		      		      
 				<div id="tab-side-container" style="width:450%;height:90%;">
 					<ul style="background:#F1EAEA;height:auto">
-				  		<li style="width:200px;"><a href="#side-tab8">管理员配置</a></li>
+				  		<li style="width:200px;"><a href="#side-tab1">管理员配置</a></li>
 				  		<li style="width:200px;"><a href="#side-tab6">网络配置</a></li>
 					  	<li style="width:200px;"><a href="#side-tab11">DNS扫描应用配置</a></li>
 					  	<li style="width:200px;"><a href="#side-tab9">DNS探测应用配置</a></li>
@@ -148,7 +149,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					  	<li style="width:200px;"><a href="#side-tab2">蜜罐主机配置</a></li>
 					  	<li style="width:200px;"><a href="#side-tab3">数据库配置</a></li>
 					   -->
-				  		<li style="width:200px;"><a href="#side-tab1">License配置</a></li>
+				  		<li style="width:200px;"><a href="#side-tab8">License配置</a></li>
 				 		 <!--  <li style="width:200px;"><a href="#side-tab4">FTP服务器配置</a></li>
 				   		-->
 				 	</ul>
@@ -164,11 +165,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					
 				 	<div class="panel-container"  >
 				 	
-						<div id="side-tab8" style="margin-left:120px;">
+						<div id="side-tab1" style="margin-left:120px;">
 					        <%@ include file="admin_manage_tab.jsp" %>
 						</div>
 					   
-						<div id="side-tab1" style="margin-left:120px;">
+						<div id="side-tab8" style="margin-left:120px;">
 				        	 <%@ include file="license_manage_tab.jsp" %>
 						</div>
 						

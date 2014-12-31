@@ -41,8 +41,11 @@ $(function(){
 				$("#fakePort").val(dnsScanConfInfo.fakePort);
 				$("#ttl").val(dnsScanConfInfo.ttl);
 				$("#maxIteration").val(dnsScanConfInfo.maxIteration);
-				$("#resolverUpdate").val(dnsScanConfInfo.resolverUpdate);
+//				$("#resolverUpdate").val(dnsScanConfInfo.resolverUpdate);
+				$("input:radio[name='resolverUpdate'][value='"+dnsScanConfInfo.resolverUpdate+"']").attr('checked','true');
 				$("#resolverInterval").val(dnsScanConfInfo.resolverInterval);
+				$("#nonrecursive").val(dnsScanConfInfo.nonrecursive);
+				$("input:radio[name='nonrecursive'][value='"+dnsScanConfInfo.nonrecursive+"']").attr('checked','true');
 			}
 		}
 	});
@@ -83,7 +86,8 @@ $(function(){
 			ttl:{required:true},
 			maxIteration:{required:true},
 			resolverUpdate:{required:true},
-			resolverInterval:{required:true}
+			resolverInterval:{required:true},
+			nonrecursive:{required:true}
 		},
 		messages:{
 			DNSScanDBip1:{required:"请补全IP!",digits:"输入不是整数！"},
@@ -116,7 +120,8 @@ $(function(){
 			ttl:{required:"ttl不能为空！"},
 			maxIteration:{required:"maxIteration不能为空！"},
 			resolverUpdate:{required:"resolverUpdate不能为空！"},
-			resolverInterval:{required:"resolverInterval不能为空！"}
+			resolverInterval:{required:"resolverInterval不能为空！"},
+			nonrecursive:{required:"nonrecursive不能为空！"}
 		},
 		errorPlacement: function(error, element) {
 		    error.appendTo( element.parent("div").next("label") );
@@ -153,8 +158,10 @@ $(function(){
 					fakePort:$("#fakePort").val(),
 					ttl:$("#ttl").val(),
 					maxIteration:$("#maxIteration").val(),
-					resolverUpdate:$("#resolverUpdate").val(),
-					resolverInterval:$("#resolverInterval").val()
+					resolverUpdate:$('input[name="resolverUpdate"]:checked').val(),
+					resolverInterval:$("#resolverInterval").val(),
+					nonrecursive:$('input[name="nonrecursive"]:checked').val()
+//					$('input[name="vendorIsopen"]:checked').val();
 				},
 				dataType:'json',
 				success : function(data) {

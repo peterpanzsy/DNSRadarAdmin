@@ -20,14 +20,14 @@ public class DNSScanConf {
 	String maxIteration;
 	String resolverUpdate;
 	String resolverInterval;
-	
+	String nonrecursive;
 	
 	public DNSScanConf(int id, String dNSScanDBip, String scannerIP,
 			String scanDefaultGwip, String testDomainIp, String dNSScanDBname,
 			String dNSScanDBuser, String dNSScanDBpasswd, String testDomain,
 			String packetRate, String packetNum, String outputDir,
 			String probeNum, String extractNum, String fakePort, String ttl,
-			String maxIteration, String resolverUpdate, String resolverInterval) {
+			String maxIteration, String resolverUpdate, String resolverInterval,String nonrecursive) {
 		super();
 		this.id = id;
 		DNSScanDBip = dNSScanDBip;
@@ -48,6 +48,7 @@ public class DNSScanConf {
 		this.maxIteration = maxIteration;
 		this.resolverUpdate = resolverUpdate;
 		this.resolverInterval = resolverInterval;
+		this.nonrecursive=nonrecursive;
 	}
 	public int getId() {
 		return id;
@@ -162,6 +163,12 @@ public class DNSScanConf {
 	}
 	public void setResolverInterval(String resolverInterval) {
 		this.resolverInterval = resolverInterval;
+	}
+	public String getNonrecursive() {
+		return nonrecursive;
+	}
+	public void setNonrecursive(String nonrecursive) {
+		this.nonrecursive = nonrecursive;
 	}
 	
 	

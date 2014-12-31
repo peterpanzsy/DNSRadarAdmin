@@ -43,12 +43,12 @@ public class DNSScanConfDao {
 			String dNSScanDBuser, String dNSScanDBpasswd, String testDomain,
 			String packetRate, String packetNum, String outputDir,
 			String probeNum, String extractNum, String fakePort, String ttl,
-			String maxIteration,String resolverUpdate, String resolverInterval) {
+			String maxIteration,String resolverUpdate, String resolverInterval,String nonrecursive) {
 		Query q;
 		// TODO Auto-generated method stub
 		if(id>0){
 //			Query q = session.createSQLQuery("delete from t_DNSScanConf");
-			q = session.createSQLQuery("update t_dns_scan_conf set DNSScanDBip=?,scannerIP=?,scanDefaultGwip=?,testDomainIp=?,DNSScanDBname=?,DNSScanDBuser=?,DNSScanDBpasswd=?,testDomain=?,packetRate=?,packetNum=?,outputDir=?,probeNum=?,extractNum=?,fakePort=?,ttl=?,maxIteration=?,resolverUpdate=?,resolverInterval=? where id=?");
+			q = session.createSQLQuery("update t_dns_scan_conf set DNSScanDBip=?,scannerIP=?,scanDefaultGwip=?,testDomainIp=?,DNSScanDBname=?,DNSScanDBuser=?,DNSScanDBpasswd=?,testDomain=?,packetRate=?,packetNum=?,outputDir=?,probeNum=?,extractNum=?,fakePort=?,ttl=?,maxIteration=?,resolverUpdate=?,resolverInterval=?,nonrecursive=? where id=?");
 			q.setParameter(0, dNSScanDBip);
 			q.setParameter(1, scannerIP);
 			q.setParameter(2, scanDefaultGwip);
@@ -67,9 +67,10 @@ public class DNSScanConfDao {
 			q.setParameter(15, maxIteration);
 			q.setParameter(16, resolverUpdate);
 			q.setParameter(17, resolverInterval);
-			q.setParameter(18, id);					
+			q.setParameter(18, nonrecursive);
+			q.setParameter(19, id);					
 		}else{
-			q = session.createSQLQuery("insert into t_dns_scan_conf(DNSScanDBip,scannerIP,scanDefaultGwip,testDomainIp,DNSScanDBname,DNSScanDBuser,DNSScanDBpasswd,testDomain,packetRate,packetNum,outputDir,probeNum,extractNum,fakePort,ttl,maxIteration,resolverUpdate,resolverInterval) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+			q = session.createSQLQuery("insert into t_dns_scan_conf(DNSScanDBip,scannerIP,scanDefaultGwip,testDomainIp,DNSScanDBname,DNSScanDBuser,DNSScanDBpasswd,testDomain,packetRate,packetNum,outputDir,probeNum,extractNum,fakePort,ttl,maxIteration,resolverUpdate,resolverInterval,nonrecursive) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 			q.setParameter(0, dNSScanDBip);
 			q.setParameter(1, scannerIP);
 			q.setParameter(2, scanDefaultGwip);
@@ -88,6 +89,7 @@ public class DNSScanConfDao {
 			q.setParameter(15, maxIteration);
 			q.setParameter(16, resolverUpdate);
 			q.setParameter(17, resolverInterval);
+			q.setParameter(18,nonrecursive);
 			
 			}
 		int result=q.executeUpdate();
@@ -97,7 +99,7 @@ public class DNSScanConfDao {
 	}
 	
 	public List<DNSScanConf> getParameter() {
-		SQLQuery q = session.createSQLQuery("select t.id,t.DNSScanDBip,t.scannerIP,t.scanDefaultGwip,t.testDomainIp,t.DNSScanDBname,t.DNSScanDBuser,t.DNSScanDBpasswd,t.testDomain,t.packetRate,t.packetNum,t.outputDir,t.probeNum,t.extractNum,t.fakePort,t.ttl,t.maxIteration,t.resolverUpdate,t.resolverInterval from t_dns_scan_conf t ");
+		SQLQuery q = session.createSQLQuery("select t.id,t.DNSScanDBip,t.scannerIP,t.scanDefaultGwip,t.testDomainIp,t.DNSScanDBname,t.DNSScanDBuser,t.DNSScanDBpasswd,t.testDomain,t.packetRate,t.packetNum,t.outputDir,t.probeNum,t.extractNum,t.fakePort,t.ttl,t.maxIteration,t.resolverUpdate,t.resolverInterval,t.nonrecursive from t_dns_scan_conf t ");
 		q.setFirstResult(0).setMaxResults(1);
 		List l = q.list();
 		List<DNSScanConf> re=new ArrayList<DNSScanConf>();
@@ -123,7 +125,8 @@ public class DNSScanConfDao {
 			  String maxIteration = (String)row[16];
 			  String resolverUpdate=(String)row[17];
 			  String resolverInterval=(String)row[18];
-			  DNSScanConf DNSScanConf=new DNSScanConf(id, DNSScanDBip, scannerIP, scanDefaultGwip, testDomainIp, DNSScanDBname, DNSScanDBuser, DNSScanDBpasswd, testDomain, packetRate, packetNum, outputDir, probeNum, extractNum, fakePort, ttl, maxIteration, resolverUpdate, resolverInterval);	 
+			  String nonrecursive=(String)row[19];
+			  DNSScanConf DNSScanConf=new DNSScanConf(id, DNSScanDBip, scannerIP, scanDefaultGwip, testDomainIp, DNSScanDBname, DNSScanDBuser, DNSScanDBpasswd, testDomain, packetRate, packetNum, outputDir, probeNum, extractNum, fakePort, ttl, maxIteration, resolverUpdate, resolverInterval,nonrecursive);	 
 			  re.add(DNSScanConf);
 		}
 		return re;

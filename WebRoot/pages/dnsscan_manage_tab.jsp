@@ -29,7 +29,7 @@ onkeyup=keyUpEvent(DNSScanDBip1,DNSScanDBip2,DNSScanDBip3)>.<input
  				<td><input id="DNSScanDBpasswd" type="password" class="span3" style="width:100px" name="DNSScanDBpasswd"  /><em style="color:red">*</em></td>
  			</tr>	      							      			
  			<tr>
- 				<td><label >scannerIP：</label></td>
+ 				<td><label >扫描器IP：</label></td>
          <td><div class=all_input>						  
     <input name=scannerIP1 id="scannerIP1" class=ip_input maxlength=3
 onkeydown=keyDownEvent(this) onkeyup=keyUpEvent(scannerIP1,scannerIP1,scannerIP2)>.<input
@@ -42,7 +42,7 @@ onkeyup=keyUpEvent(scannerIP1,scannerIP2,scannerIP3)>.<input
   </div><label></label><input name = scannerIPvalue id="scannerIPvalue" TYPE="hidden"></td>
  			</tr>	
  			<tr>
- 				<td><label >defaultGw：</label></td>
+ 				<td><label >默认网关：</label></td>
          <td><div class=all_input>						  
     <input name=scanDefaultGwip1 id="scanDefaultGwip1" class=ip_input maxlength=3
 onkeydown=keyDownEvent(this) onkeyup=keyUpEvent(scanDefaultGwip1,scanDefaultGwip1,scanDefaultGwip2)>.<input
@@ -55,11 +55,11 @@ onkeyup=keyUpEvent(scanDefaultGwip1,scanDefaultGwip2,scanDefaultGwip3)>.<input
   </div><label></label><input name = scanDefaultGwipvalue id="scanDefaultGwipvalue" TYPE="hidden"></td>
  			</tr>	
  			<tr>
- 				<td><label>testDomain:</label></td>
+ 				<td><label>DNS查询域名:</label></td>
  				<td><input id="testDomain" type="text" class="span3" style="width:100px" name="testDomain" /><em style="color:red">*</em></td>
  			</tr>
  			<tr>
- 				<td><label >testDomainIp：</label></td>
+ 				<td><label >DNS查询域名对应IP：</label></td>
          <td><div class=all_input>						  
     <input name=testDomainIp1 id="testDomainIp1" class=ip_input maxlength=3
 onkeydown=keyDownEvent(this) onkeyup=keyUpEvent(testDomainIp1,testDomainIp1,testDomainIp2)>.<input
@@ -72,45 +72,55 @@ onkeyup=keyUpEvent(testDomainIp1,testDomainIp2,testDomainIp3)>.<input
   </div><label></label><input name = testDomainIpvalue id="testDomainIpvalue" TYPE="hidden"></td>
  			</tr>
  			<tr>
- 				<td style="width:20%"><label >packetRate：</label></td>
+ 				<td style="width:20%"><label >发包速率：</label></td>
  				<td><input id="packetRate" type="text" class="span3" style="width:100px" name="packetRate" /><em style="color:red">*</em></td>
  			</tr>
  			<tr>
- 				<td style="width:20%"><label >packetNum：</label></td>
+ 				<td style="width:20%"><label >单次扫描包个数：</label></td>
  				<td><input id="packetNum" type="text" class="span3" style="width:100px" name="processNumForDig" /><em style="color:red">*</em></td>
   			</tr>
 <tr>
-  				<td style="width:20%"><label >outputDir：</label></td>
+  				<td style="width:20%"><label >输出目录：</label></td>
  				<td><input id="outputDir" type="text" class="span3" style="width:100px" name="digIteration" /><em style="color:red">*</em></td>
  			</tr>
  			<tr>
- 				<td style="width:20%"><label >probeNum：</label></td>
+ 				<td style="width:20%"><label >探测进程个数：</label></td>
  				<td><input id="probeNum" type="text" class="span3" style="width:100px" name="probeNum" /><em style="color:red">*</em></td>
  			</tr>
  			<tr>
- 				<td style="width:20%"><label >extractNum：</label></td>
+ 				<td style="width:20%"><label >解析进程个数：</label></td>
  				<td><input id="extractNum" type="text" class="span3" style="width:100px" name="extractNum" /><em style="color:red">*</em></td>
  			</tr>
 <tr>
- 				<td style="width:20%"><label >fakePort：</label></td>
+ 				<td style="width:20%"><label >端口：</label></td>
  				<td><input id="fakePort" type="text" class="span3" style="width:100px" name="fakePort" /><em style="color:red">*</em></td>
  			</tr>
  			<tr>
- 				<td style="width:20%"><label >ttl：</label></td>
+ 				<td style="width:20%"><label >TTL值：</label></td>
  				<td><input id="ttl" type="text" class="span3" style="width:100px" name="ttl" /><em style="color:red">*</em></td>
  			</tr>
  			<tr>
- 				<td style="width:20%"><label >maxIteration：</label></td>
+ 				<td style="width:20%"><label >最大迭代次数：</label></td>
  				<td><input id="maxIteration" type="text" class="span3" style="width:100px" name="maxIteration" /><em style="color:red">*</em></td>
  			</tr> 
  			<tr>
- 				<td style="width:20%"><label >resolverUpdate：</label></td>
- 				<td><input id="resolverUpdate" type="text" class="span3" style="width:100px" name="resolverUpdate" /><em style="color:red">*</em></td>
+ 				<td style="width:20%"><label >是否更新：</label></td>
+ 				<td>
+ 				<input type="radio" name="resolverUpdate" value="true" />是
+ 				<input type="radio" name="resolverUpdate" value="false" checked> 否
+ 				<em style="color:red">*</em></td>
  			</tr> 
  			<tr>
- 				<td style="width:20%"><label >resolverInterval：</label></td>
+ 				<td style="width:20%"><label >更新间隔时间(天)：</label></td>
  				<td><input id="resolverInterval" type="text" class="span3" style="width:100px" name="resolverInterval" /><em style="color:red">*</em></td>
- 			</tr>      		
+ 			</tr>
+ 			<tr>
+ 				<td style="width:20%"><label >是否进行非递归查询：</label></td>
+ 				<td>
+ 				<input type="radio" name="nonrecursive" value="true" checked=false />是
+ 				<input type="radio" name="nonrecursive" value="false" checked=false /> 否
+ 				<em style="color:red">*</em></td>
+ 			</tr>        		
  </table>
  <div class="modal-footer">
       <button type="submit" class="btn btn-primary"  >保存</button>
