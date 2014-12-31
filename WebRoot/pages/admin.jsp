@@ -301,9 +301,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	
 		</div>
     </div>
-    <footer style="color: #999999;padding: 40px;text-align: center;color:white;background-color:rgba(149, 187, 224, 0.33)">
+  <!--   <footer style="color: #999999;padding: 40px;text-align: center;color:white;background-color:rgba(149, 187, 224, 0.33)">
   		<span id="copyright">&copy; 2014 </span> 
-	</footer>
+	</footer> -->
   <%@ include file="modal.jsp" %>
 		
 		

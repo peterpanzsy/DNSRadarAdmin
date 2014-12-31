@@ -44,7 +44,7 @@
 					  </div><input name = localdnsipvalue id="localdnsipvalue" TYPE="hidden">
 					</td>
    				</tr>
-   				<tr><th style="height:30px;">主数据库连接字</th></tr>
+   				<tr><th style="height:30px;">主数据库:</th></tr>
     			<tr>
 	    			<td><label >数据库IP：</label></td>
 		            <td><div class=all_input>						  
@@ -72,7 +72,7 @@
    					<td><input id="dnsresultDBpasswd" type="password" class="span3" style="width:100px" name="dnsresultDBpasswd"  /><em style="color:red">*</em></td>
    				</tr>	
 	      		
-	      		<tr><th style="height:30px;">缓冲数据库连接字</th></tr>
+	      		<tr><th style="height:30px;">缓冲数据库:</th></tr>
     			<tr>
 	    			<td><label >数据库IP：</label></td>
 		            <td><div class=all_input>						  
@@ -100,7 +100,7 @@
    					<td><input id="PRCDBpasswd" type="password" class="span3" style="width:100px" name="PRCDBpasswd"  /><em style="color:red">*</em></td>
    				</tr>				      			
     			
-    			<tr><th style="height:30px;">PCAP频率估计数据库连接字</th></tr>
+<!--     			<tr><th style="height:30px;">pcap频率估计数据库:</th></tr>
     			<tr>
 	    			<td><label >数据库IP：</label></td>
 		            <td><div class=all_input>						  
@@ -126,7 +126,7 @@
    				<tr>
    					<td><label>密码：</label></td>
    					<td><input id="EARPDBpasswd" type="password" class="span3" style="width:100px" name="EARPDBpasswd"  /><em style="color:red">*</em></td>
-   				</tr>	  			
+   				</tr>	 -->  			
    </table>
    <div class="modal-footer">
         <button type="submit" class="btn btn-primary"  >保存</button>
