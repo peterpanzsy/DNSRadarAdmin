@@ -100,7 +100,7 @@ public class DNSScanConfAction  extends ActionSupport{
 				Matcher matcher1 = pattern1.matcher(line);
 				if(matcher0.matches()){
 					StringBuffer btemp=new StringBuffer();
-					btemp.append("<add name=\"ScanInputConnection\" connectionString=\"Data Source=").append(DNSScanDBip)
+					btemp.append("<add name=\"ScanConnection\" connectionString=\"Data Source=").append(DNSScanDBip)
 					.append(";Initial Catalog=").append(DNSScanDBname)
 					.append(";User ID=").append(DNSScanDBuser)
 					.append(";Password=").append(DNSScanDBpasswd)
